@@ -23,7 +23,14 @@
                                 Pas d'utilisateur
                             @endif
                         </p>
+                        <form method="POST" action="{{route('article.destroy', [$article->id])}}">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="submit" value="Supprimer">
+                        </form>
                         <a href="{{route('article.index')}}">Retour</a>
+                        @include('components.share', ['url' => 'http://127.0.0.1:8000/article/{{$article->id}}'])
+
                     </div>
                 </div>
             </div>
