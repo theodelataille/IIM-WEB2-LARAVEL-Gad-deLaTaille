@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading">Derniers articles publiés</div>
 
                     <div class="panel-body">
 
@@ -17,9 +17,22 @@
                         @forelse($articles as $article)
                             <h1>{{ $article->title }}</h1>
                             <p>{{ $article->content }}</p>
-                            <a href="{{route('article.show', ['id' => $article->id])}}">
-                                Voir mon article
+                            <a type="button" class="btn btn-primary" href="{{route('article.show', ['id' => $article->id])}}">
+                                Voir l'article
                             </a>
+                            <div style="float:right">
+                                @if ($article->isLiked)
+                                    <a type="button" class="btn btn-danger btn-sm" href="{{ route('article.like', $article->id) }}">Je n'aime plus <i class="fa fa-thumbs-down"></i></a>
+                                @else
+                                    <a type="button" class="btn btn-success btn-sm" href="{{ route('article.like', $article->id) }}">J'aime <i class="fa fa-thumbs-up"></i></a>
+                                @endif
+                                <p>{{ $article->likes()->count() }} personnes aiment ça <br>
+                                    @foreach ($article->likes as $user)
+                                        <strong>{{ $user->name }}, </strong>
+                                    @endforeach
+                                </p>
+                            </div>
+
                         @empty
                             Rien du tout
                         @endforelse

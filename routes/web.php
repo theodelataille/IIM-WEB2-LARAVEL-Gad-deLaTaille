@@ -30,6 +30,7 @@ Route::get('/contact',
 Route::post('/contact',
     ['as' => 'contact_store', 'uses' => 'FormsController@store']);
 
+Route::get('article/like/{id}', ['as' => 'article.like', 'uses' => 'LikeController@likeArticle']);
 
 //EXO1
 
