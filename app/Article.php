@@ -22,4 +22,13 @@ class Article extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+    public function addComment($body){
+        Comment::create([
+            'body' => $body,
+            'article_id' => $this->id
+        ]);
+    }
 }
