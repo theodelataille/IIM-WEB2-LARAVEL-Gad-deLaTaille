@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading">Rédigez votre article</div>
 
                     <div class="panel-body">
                         <form method="POST" action="{{route('article.store')}}">
                             {{csrf_field()}}
-                            <input required type="text" name="title">
-                            <textarea name="content" id="" cols="30" rows="10"></textarea>
+                            <input required type="text" name="title" placeholder="Titre">
+                            <textarea name="content" id="" cols="30" rows="10" placeholder="Contenu"></textarea>
                             <input type="submit" value="Envoyer">
 
                         @include('messages.errors')

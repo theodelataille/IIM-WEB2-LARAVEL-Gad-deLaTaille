@@ -32,6 +32,8 @@
                                     @endforeach
                                 </p>
                             </div>
+                            <br><br><br>
+                            <hr>
 
                         @empty
                             Rien du tout

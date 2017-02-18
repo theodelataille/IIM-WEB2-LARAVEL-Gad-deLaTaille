@@ -10,6 +10,7 @@ return array(
     'ArticlesTableSeeder' => $baseDir . '/database/seeds/ArticlesTableSeeder.php',
     'CreateArticlesTable' => $baseDir . '/database/migrations/2017_02_07_142817_create_articles_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2017_02_14_024321_create_comments_table.php',
+    'CreateFormsTable' => $baseDir . '/database/migrations/2017_02_17_235633_create_forms_table.php',
     'CreateLikeablesTable' => $baseDir . '/database/migrations/2017_02_17_213820_create_likeables_table.php',
     'CreateModelsTable' => $baseDir . '/database/migrations/2017_02_17_160450_create_models_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',

@@ -29,6 +29,10 @@
                         <p>{{$article->content}}</p>
                         <br>
 
+                        <a type="button" class="btn btn-default" href="{{route('article.edit', ['id' => $article->id])}}">
+                            Modifier
+                        </a>
+
                         <form method="POST" action="{{route('article.destroy', [$article->id])}}" style="float:right">
                             {{csrf_field()}}
                             <input type="hidden" name="_method" value="DELETE">
@@ -57,13 +61,11 @@
 
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <textarea name="body" placeholder="Votre commentaire ici." class="form-control">
-
-                                        </textarea>
+                                        <textarea name="body" placeholder="Votre commentaire" class="form-control"></textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Ajouter un commentaire</button>
+                                        <button type="submit" class="btn btn-primary">Publier</button>
                                     </div>
 
                                 </form>

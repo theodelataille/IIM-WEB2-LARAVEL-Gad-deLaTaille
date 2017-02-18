@@ -27,10 +27,14 @@ Route::get('/user', 'UserController@index');
 
 Route::get('/contact',
     ['as' => 'contact', 'uses' => 'FormsController@create']);
+
 Route::post('/contact',
     ['as' => 'contact_store', 'uses' => 'FormsController@store']);
 
 Route::get('article/like/{id}', ['as' => 'article.like', 'uses' => 'LikeController@likeArticle']);
+
+Route::post('/article/{article}/comments', 'CommentsController@store');
+
 
 //EXO1
 
