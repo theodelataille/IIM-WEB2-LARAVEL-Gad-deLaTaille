@@ -44,6 +44,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                        <li><a href="{{ url('/home') }}">Accueil</a></li>
                         <li><a href="{{ url('/article') }}">Article</a></li>&nbsp
                         <li><a href="{{ url('/article/create') }}">Nouvel article</a></li>
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
@@ -66,7 +67,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Déconnexion
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
